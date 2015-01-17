@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     var client: YelpClient!
     // You can register for Yelp API keys here: http://www.yelp.com/developers/manage_api_keys
@@ -31,6 +32,8 @@ class FirstViewController: UIViewController {
             }) { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                 println(error)
         }
+      
+
     }
 
     override func didReceiveMemoryWarning() {

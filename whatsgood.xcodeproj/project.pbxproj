@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		92286D601A6A768F0010047A /* ItineraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92286D5F1A6A768F0010047A /* ItineraryViewController.swift */; };
+		92AB4A341A6A8BF5008CF41D /* google.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92AB4A331A6A8BF5008CF41D /* google.plist */; };
+		92AB4A361A6A8C22008CF41D /* GooglePlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB4A351A6A8C22008CF41D /* GooglePlaces.swift */; };
+		92AB4A381A6A8D86008CF41D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AB4A371A6A8D86008CF41D /* CoreLocation.framework */; };
+		92AB4A3A1A6A8D91008CF41D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AB4A391A6A8D91008CF41D /* MapKit.framework */; };
 		92B3DE921A6A30CA002EB86C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B3DE911A6A30CA002EB86C /* AppDelegate.swift */; };
 		92B3DE941A6A30CA002EB86C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B3DE931A6A30CA002EB86C /* FirstViewController.swift */; };
 		92B3DE961A6A30CA002EB86C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B3DE951A6A30CA002EB86C /* SecondViewController.swift */; };
@@ -32,6 +36,10 @@
 /* Begin PBXFileReference section */
 		5C9D31D820C2FFDF6CEB1230 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		92286D5F1A6A768F0010047A /* ItineraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItineraryViewController.swift; sourceTree = "<group>"; };
+		92AB4A331A6A8BF5008CF41D /* google.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = google.plist; path = ../google.plist; sourceTree = "<group>"; };
+		92AB4A351A6A8C22008CF41D /* GooglePlaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlaces.swift; sourceTree = "<group>"; };
+		92AB4A371A6A8D86008CF41D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		92AB4A391A6A8D91008CF41D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		92B3DE8C1A6A30CA002EB86C /* whatsgood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = whatsgood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B3DE901A6A30CA002EB86C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92B3DE911A6A30CA002EB86C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92AB4A3A1A6A8D91008CF41D /* MapKit.framework in Frameworks */,
+				92AB4A381A6A8D86008CF41D /* CoreLocation.framework in Frameworks */,
 				B786C83F1BFA4B093DFDC66B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +81,8 @@
 		1C1421CA03565951A01F4F6F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92AB4A391A6A8D91008CF41D /* MapKit.framework */,
+				92AB4A371A6A8D86008CF41D /* CoreLocation.framework */,
 				FC66009839CC22F5539DF449 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -109,6 +121,7 @@
 		92B3DE8E1A6A30CA002EB86C /* whatsgood */ = {
 			isa = PBXGroup;
 			children = (
+				92AB4A351A6A8C22008CF41D /* GooglePlaces.swift */,
 				92B3DE911A6A30CA002EB86C /* AppDelegate.swift */,
 				92B3DE931A6A30CA002EB86C /* FirstViewController.swift */,
 				92286D5F1A6A768F0010047A /* ItineraryViewController.swift */,
@@ -125,6 +138,7 @@
 		92B3DE8F1A6A30CA002EB86C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				92AB4A331A6A8BF5008CF41D /* google.plist */,
 				92B3DE901A6A30CA002EB86C /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -240,6 +254,7 @@
 				92B3DE991A6A30CA002EB86C /* Main.storyboard in Resources */,
 				92B3DE9E1A6A30CA002EB86C /* LaunchScreen.xib in Resources */,
 				92B3DE9B1A6A30CA002EB86C /* Images.xcassets in Resources */,
+				92AB4A341A6A8BF5008CF41D /* google.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +309,7 @@
 				92286D601A6A768F0010047A /* ItineraryViewController.swift in Sources */,
 				92B3DE961A6A30CA002EB86C /* SecondViewController.swift in Sources */,
 				92B3DE921A6A30CA002EB86C /* AppDelegate.swift in Sources */,
+				92AB4A361A6A8C22008CF41D /* GooglePlaces.swift in Sources */,
 				92B3DE941A6A30CA002EB86C /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

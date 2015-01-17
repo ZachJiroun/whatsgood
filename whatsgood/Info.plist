@@ -53,5 +53,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Current location is needed to determine what is around you</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>The app always needs to know your current location</string>
 </dict>
 </plist>
