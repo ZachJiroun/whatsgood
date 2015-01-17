@@ -27,9 +27,6 @@ class ItineraryViewController: UIViewController, UITableViewDelegate, UITableVie
         
         // Google Places
         
-        
-        
-        
         var gp = GooglePlaces()
         
         gp.search(location, radius: 20000, query: "museum") { (items, errorDescription) -> Void in // Radius in meters
