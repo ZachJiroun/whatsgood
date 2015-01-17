@@ -16,58 +16,32 @@ var events: [String] = []
 
 class ItineraryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
+    var refreshControl:UIRefreshControl!  // An optional variable
+    
+    @IBOutlet weak var cityNav: UINavigationItem!
+    
     @IBOutlet weak var itinerary: UITableView!
     
     let locationManager = CLLocationManager()
     var location: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 38.9380912, longitude: -77.0449327) // Default location
+    var currCity: String = "Location unavailable"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // Google Places
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        itinerary?.addSubview(refreshControl)
         
-        var gp = GooglePlaces()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         
-        gp.search(location, radius: 20000, query: "museum") { (items, errorDescription) -> Void in // Radius in meters
-            
-            println("Result count: \(items!.count)")
-            
-            for index in 0..<items!.count {
-                
-                attractions.append(items![index].name)
-                // println(attractions)
-            }
-            
-             self.itinerary.reloadData()
-            
-        }
         
-        gp.search(location, radius: 20000, query: "food") { (items, errorDescription) -> Void in // Radius in meters
-            
-            println("Result count: \(items!.count)")
-            
-            for index in 0..<items!.count {
-                
-                food.append(items![index].name)
-                // println(food)
-            }
-            
-            self.itinerary.reloadData()
-        }
         
-        gp.search(location, radius: 20000, query: "night_club") { (items, errorDescription) -> Void in // Radius in meters
-            
-            println("Result count: \(items!.count)")
-            
-            for index in 0..<items!.count {
-                
-                events.append(items![index].name)
-                // println(events)
-            }
-            
-            self.itinerary.reloadData()
-        }
         
     }
 
@@ -83,6 +57,12 @@ class ItineraryViewController: UIViewController, UITableViewDelegate, UITableVie
         default:
             return 0
         }
+    }
+    
+    func refresh(sender: AnyObject) { // Pro version will check in background then push. Free is manual..
+        
+        println("Refresh worked!")
+        self.refreshControl.endRefreshing() // End refreshing
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -141,10 +121,82 @@ class ItineraryViewController: UIViewController, UITableViewDelegate, UITableVie
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         var userLocation: CLLocation = locations[0] as CLLocation
         location = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+        
+        CLGeocoder().reverseGeocodeLocation(locationManager.location, completionHandler: { (placemarks, error) -> Void in
+            if (error != nil) {
+                println("Error in getting city")
+            }
+            
+            if (placemarks.count > 0) {
+                let pm = placemarks[0] as CLPlacemark
+                self.displayLocationInfo(pm)
+            } else {
+                println("Error with data")
+            }
+        })
+        
+        // Google Places
+        
+        
+        
+        
+        var gp = GooglePlaces()
+        
+        gp.search(location, radius: 20000, query: "museum") { (items, errorDescription) -> Void in // Radius in meters
+            
+            println("Result count: \(items!.count)")
+            
+            for index in 0..<items!.count {
+                
+                attractions.append(items![index].name)
+                // println(attractions)
+            }
+            
+            self.itinerary.reloadData()
+            
+        }
+        
+        gp.search(location, radius: 20000, query: "food") { (items, errorDescription) -> Void in // Radius in meters
+            
+            println("Result count: \(items!.count)")
+            
+            for index in 0..<items!.count {
+                
+                food.append(items![index].name)
+                // println(food)
+            }
+            
+            self.itinerary.reloadData()
+        }
+        
+        gp.search(location, radius: 20000, query: "night_club") { (items, errorDescription) -> Void in // Radius in meters
+            
+            println("Result count: \(items!.count)")
+            
+            for index in 0..<items!.count {
+                
+                events.append(items![index].name)
+                // println(events)
+            }
+            
+            self.itinerary.reloadData()
+        }
+
     }
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         println(error)
+    }
+    
+    func displayLocationInfo(placemark: CLPlacemark) {
+        println(placemark.locality)
+        currCity = placemark.locality
+        println("city: \(currCity)")
+        println(placemark.postalCode)
+        
+        // Format navigation bar
+        println("current city \(currCity)")
+        cityNav.title = currCity
     }
     
     

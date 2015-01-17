@@ -27,10 +27,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="City Name" id="kf9-o6-fKB"/>
+                    <navigationItem key="navigationItem" id="kf9-o6-fKB"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="599"/>
                     <connections>
+                        <outlet property="cityNav" destination="kf9-o6-fKB" id="Dp3-fd-3Sk"/>
                         <outlet property="itinerary" destination="CqM-02-pb7" id="qS9-XF-APr"/>
                     </connections>
                 </viewController>
@@ -49,6 +50,14 @@
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="San Francisco" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckV-xW-fxq">
+                                <rect key="frame" x="87" y="204" width="239" height="58"/>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="27"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="R6v-s9-v7g"/>
@@ -88,6 +97,7 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.98431372549019602" green="0.22352941176470589" blue="0.25882352941176473" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="30"/>
                             <color key="textColor" red="0.14901960784313725" green="0.90980392156862744" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
@@ -112,6 +122,7 @@
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.98431372549019602" green="0.22352941176470589" blue="0.25882352941176473" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="30"/>
                             <color key="textColor" red="0.14901960784313725" green="0.90980392156862744" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
