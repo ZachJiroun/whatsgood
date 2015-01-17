@@ -10,9 +10,29 @@ import UIKit
 
 class FirstViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var client: YelpClient!
+    // You can register for Yelp API keys here: http://www.yelp.com/developers/manage_api_keys
+    let yelpConsumerKey = "VZG9kFo8wT7PhwIfiBGkCg"
+    let yelpConsumerSecret = "YW-AeCS_lgpe9mBtm1aKILzQRd8"
+    let yelpToken = "61_DImwTxertfarFxxGurhn7YAsJHSsw"
+    let yelpTokenSecret = "4MR-xOXoKJXu6jGqDlcrNasvuSA"
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        client = YelpClient(consumerKey: yelpConsumerKey, consumerSecret: yelpConsumerSecret, accessToken: yelpToken, accessSecret: yelpTokenSecret)
+        
+        client.searchWithLatLong(term: "Thai", latitude: 37.77493, longitude: -122.419415, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+            println(response)
+            }) { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                println(error)
+        }
     }
 
     override func didReceiveMemoryWarning() {
