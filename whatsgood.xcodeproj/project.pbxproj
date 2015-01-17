@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92286D601A6A768F0010047A /* ItineraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92286D5F1A6A768F0010047A /* ItineraryViewController.swift */; };
 		92B3DE921A6A30CA002EB86C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B3DE911A6A30CA002EB86C /* AppDelegate.swift */; };
 		92B3DE941A6A30CA002EB86C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B3DE931A6A30CA002EB86C /* FirstViewController.swift */; };
 		92B3DE961A6A30CA002EB86C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B3DE951A6A30CA002EB86C /* SecondViewController.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		5C9D31D820C2FFDF6CEB1230 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		92286D5F1A6A768F0010047A /* ItineraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItineraryViewController.swift; sourceTree = "<group>"; };
 		92B3DE8C1A6A30CA002EB86C /* whatsgood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = whatsgood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B3DE901A6A30CA002EB86C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92B3DE911A6A30CA002EB86C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				92B3DE911A6A30CA002EB86C /* AppDelegate.swift */,
 				92B3DE931A6A30CA002EB86C /* FirstViewController.swift */,
+				92286D5F1A6A768F0010047A /* ItineraryViewController.swift */,
 				92B3DE951A6A30CA002EB86C /* SecondViewController.swift */,
 				92B3DE971A6A30CA002EB86C /* Main.storyboard */,
 				92B3DE9A1A6A30CA002EB86C /* Images.xcassets */,
@@ -288,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92B3DEB61A6A3267002EB86C /* YelpClient.swift in Sources */,
+				92286D601A6A768F0010047A /* ItineraryViewController.swift in Sources */,
 				92B3DE961A6A30CA002EB86C /* SecondViewController.swift in Sources */,
 				92B3DE921A6A30CA002EB86C /* AppDelegate.swift in Sources */,
 				92B3DE941A6A30CA002EB86C /* FirstViewController.swift in Sources */,

@@ -9,8 +9,6 @@
 import UIKit
 
 class FirstViewController: UIViewController {
-
-    @IBOutlet weak var tableView: UITableView!
     
     var client: YelpClient!
     // You can register for Yelp API keys here: http://www.yelp.com/developers/manage_api_keys
@@ -28,7 +26,7 @@ class FirstViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         client = YelpClient(consumerKey: yelpConsumerKey, consumerSecret: yelpConsumerSecret, accessToken: yelpToken, accessSecret: yelpTokenSecret)
         
-        client.searchWithLatLong(term: "Thai", latitude: 37.77493, longitude: -122.419415, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+        client.searchWithLatLong(term: "Thai", latitude: 38.897946, longitude: -77.021927, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
             println(response)
             }) { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                 println(error)
