@@ -11,6 +11,7 @@
 		9251708A1A6ACD4500DEB07A /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 925170871A6ACD4500DEB07A /* Icon-60@2x.png */; };
 		9251708B1A6ACD4500DEB07A /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 925170881A6ACD4500DEB07A /* Icon-60@3x.png */; };
 		9251708C1A6ACD4500DEB07A /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 925170891A6ACD4500DEB07A /* Icon-76@2x.png */; };
+		9275BF371A6B58EC007A1A0C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9275BF361A6B58EC007A1A0C /* SettingsViewController.swift */; };
 		92AB4A341A6A8BF5008CF41D /* google.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92AB4A331A6A8BF5008CF41D /* google.plist */; };
 		92AB4A361A6A8C22008CF41D /* GooglePlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB4A351A6A8C22008CF41D /* GooglePlaces.swift */; };
 		92AB4A381A6A8D86008CF41D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AB4A371A6A8D86008CF41D /* CoreLocation.framework */; };
@@ -43,6 +44,7 @@
 		925170871A6ACD4500DEB07A /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
 		925170881A6ACD4500DEB07A /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
 		925170891A6ACD4500DEB07A /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
+		9275BF361A6B58EC007A1A0C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		92AB4A331A6A8BF5008CF41D /* google.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = google.plist; path = ../google.plist; sourceTree = "<group>"; };
 		92AB4A351A6A8C22008CF41D /* GooglePlaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlaces.swift; sourceTree = "<group>"; };
 		92AB4A371A6A8D86008CF41D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -137,6 +139,7 @@
 				92B3DE931A6A30CA002EB86C /* FirstViewController.swift */,
 				92286D5F1A6A768F0010047A /* ItineraryViewController.swift */,
 				92B3DE951A6A30CA002EB86C /* SecondViewController.swift */,
+				9275BF361A6B58EC007A1A0C /* SettingsViewController.swift */,
 				92B3DE971A6A30CA002EB86C /* Main.storyboard */,
 				92B3DE9A1A6A30CA002EB86C /* Images.xcassets */,
 				92B3DE9C1A6A30CA002EB86C /* LaunchScreen.xib */,
@@ -322,6 +325,7 @@
 			files = (
 				92B3DEB61A6A3267002EB86C /* YelpClient.swift in Sources */,
 				92286D601A6A768F0010047A /* ItineraryViewController.swift in Sources */,
+				9275BF371A6B58EC007A1A0C /* SettingsViewController.swift in Sources */,
 				92B3DE961A6A30CA002EB86C /* SecondViewController.swift in Sources */,
 				92B3DE921A6A30CA002EB86C /* AppDelegate.swift in Sources */,
 				92AB4A361A6A8C22008CF41D /* GooglePlaces.swift in Sources */,
