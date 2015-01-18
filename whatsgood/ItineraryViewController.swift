@@ -72,31 +72,7 @@ class ItineraryViewController: UIViewController, UITableViewDelegate, UITableVie
         
     }
 
-    // Colors for section headers
-    func tableView(tableView: UITableView!, viewForHeaderInSection section: Int) -> UIView! {
-        
-        var header :UITableViewHeaderFooterView = UITableViewHeaderFooterView()
-        
-        switch(section) {
-        case 0:
-            header.textLabel.textAlignment = NSTextAlignment.Center
-            header.textLabel.font = UIFont (name: "HelveticaNeue-UltraLight", size: 30)
-            header.textLabel.textColor = UIColor.whiteColor()
-            
-        case 1:
-            header.textLabel.font = UIFont(name: "STHeitiTC-Light", size: 15.0)
-            header.textLabel.textColor = UIColor.whiteColor()
-            
-        case 2:
-            header.textLabel.font = UIFont(name: "STHeitiTC-Light", size: 15.0)
-            header.textLabel.textColor = UIColor.whiteColor()
-            
-        default:
-            break
-        }
-        
-        return header
-    }
+
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch (section) {
