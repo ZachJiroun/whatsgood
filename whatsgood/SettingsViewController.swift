@@ -8,7 +8,33 @@
 
 import Foundation
 import UIKit
+import Realm
 
 class SettingsViewController: UIViewController {
+    
+    @IBOutlet weak var radiusTextField: UITextField!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let realm = RLMRealm.defaultRealm()
+        realm.beginWriteTransaction()
+        
+        let settings = SettingsData()
+        if let radius = radiusTextField.text.toInt()? {
+            settings.radius = radius
+        }
+        
+        realm.addObject(settings)
+        realm.commitWriteTransaction()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        radiusTextField.resignFirstResponder()
+    }
+    
 }

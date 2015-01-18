@@ -9,13 +9,15 @@
 import Foundation
 import UIKit
 import CoreLocation
+import Realm
 
-var attractions: [String] = []
-var food: [String] = []
-var events: [String] = []
+var attractions: [Data] = []
+var food: [Data] = []
+var events: [Data] = []
+
 
 class ItineraryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
-    
+    var substituteIdx = 0
     var refreshControl:UIRefreshControl!  // An optional variable
     
     @IBOutlet weak var cityNav: UINavigationItem!
@@ -75,7 +77,50 @@ class ItineraryViewController: UIViewController, UITableViewDelegate, UITableVie
         
     }
     
-    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // Replace sender
+        
+        let item = RealmData()
+        item.rating = 3
+        item.distance = 2.3
+        
+        switch (indexPath.section) {
+        case 0:
+            item.name = attractions[indexPath.row].name
+        case 1:
+            item.name = food[indexPath.row].name
+        case 2:
+            item.name = events[indexPath.row].name
+        default:
+            break
+        }
+        
+        let itineraryRealm = RLMRealm(path: "itinerary.realm")
+        itineraryRealm.beginWriteTransaction()
+        itineraryRealm.addObject(item)
+        itineraryRealm.commitWriteTransaction()
+
+        
+//        switch (indexPath.section) {
+//        case 0:
+//            PlanViewController().planNames.append(attractions[indexPath.row].name)
+////            PlanViewController().planRatings.append((planItem as RealmData).rating)
+////            PlanViewController().planDistances.append((planItem as RealmData).distance)
+//        case 1:
+//            PlanViewController().planNames.append(food[indexPath.row].name)
+//        case 2:
+//            PlanViewController().planNames.append(events[indexPath.row].name)
+//        default:
+//            break
+//        }
+        
+
+        
+        tableView.reloadData()
+        // RLMRealm.migrateRealmAtPath(itineraryRealm.path)
+        
+       
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch (section) {
@@ -99,34 +144,32 @@ class ItineraryViewController: UIViewController, UITableViewDelegate, UITableVie
         gp.search(location, radius: 2000, query: "museum") { (items, errorDescription) -> Void in // Radius in meters
             
             for index in 0..<items!.count {
-                attractions.append(items![index].name)
+                attractions.append(Data( name: items![index].name, latitude: self.location.latitude, longitdue: self.location.longitude))
             }
-            if (attractions.count == 0) {
-                attractions.append("None Available")
-            }
+            //            if (attractions.count == 0) {
+            //                attractions.append("None Available")
+            //            }
             self.itinerary.reloadData()
         }
         
         gp.search(location, radius: 2000, query: "food") { (items, errorDescription) -> Void in // Radius in meters
             
             for index in 0..<items!.count {
-                food.append(items![index].name)
-            }
-            if (food.count == 0) {
-                food.append("None Available")
-            }
+                food.append(Data( name: items![index].name, latitude: self.location.latitude, longitdue: self.location.longitude))            }
+            //            if (food.count == 0) {
+            //                food.append("None Available")
+            //            }
             self.itinerary.reloadData()
         }
         
         gp.search(location, radius: 2000, query: "night_club") { (items, errorDescription) -> Void in // Radius in meters
             
             for index in 0..<items!.count {
-                events.append(items![index].name)
-            }
-            if (events.count == 0) {
-                events
-                    .append("None Available")
-            }
+                events.append(Data( name: items![index].name, latitude: self.location.latitude, longitdue: self.location.longitude))            }
+            //            if (events.count == 0) {
+            //                events
+            //                    .append("None Available")
+            //            }
             self.itinerary.reloadData()
         }
         
@@ -148,7 +191,7 @@ class ItineraryViewController: UIViewController, UITableViewDelegate, UITableVie
             } else {
                 if (indexPath.row < attractions.count) {
                     cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
-                    cell.textLabel?.text = attractions[indexPath.row]
+                    cell.textLabel?.text = attractions[indexPath.row].name
                 }
             }
         } else if (indexPath.section == 1) { // Food
@@ -157,7 +200,7 @@ class ItineraryViewController: UIViewController, UITableViewDelegate, UITableVie
             } else {
                 if (indexPath.row < food.count) {
                     cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
-                    cell.textLabel?.text = food[indexPath.row]
+                    cell.textLabel?.text = food[indexPath.row].name
                 }
             }
         } else if (indexPath.section == 2) { // Events
@@ -166,7 +209,7 @@ class ItineraryViewController: UIViewController, UITableViewDelegate, UITableVie
             } else {
                 if (indexPath.row < events.count) {
                     cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
-                    cell.textLabel?.text = events[indexPath.row]
+                    cell.textLabel?.text = events[indexPath.row].name
                 }
             }
         }
@@ -204,33 +247,33 @@ class ItineraryViewController: UIViewController, UITableViewDelegate, UITableVie
             gp.search(location, radius: 2000, query: "museum") { (items, errorDescription) -> Void in // Radius in meters
                 
                 for index in 0..<items!.count {
-                    attractions.append(items![index].name)
+                    attractions.append(Data(name: items![index].name, latitude: self.location.latitude, longitdue: self.location.longitude))
                 }
-                if (attractions.count == 0) {
-                    attractions.append("None Available")
-                }
+                //                if (attractions.count == 0) {
+                //                    attractions.append("None Available")
+                //                }
                 self.itinerary.reloadData()
             }
             
             gp.search(location, radius: 2000, query: "food") { (items, errorDescription) -> Void in // Radius in meters
                 
                 for index in 0..<items!.count {
-                    food.append(items![index].name)
+                    food.append(Data(name: items![index].name, latitude: self.location.latitude, longitdue: self.location.longitude))
                 }
-                if (food.count == 0) {
-                    food.append("None Available")
-                }
+                //                if (food.count == 0) {
+                //                    food.append("None Available")
+                //                }
                 self.itinerary.reloadData()
             }
             
             gp.search(location, radius: 2000, query: "night_club") { (items, errorDescription) -> Void in // Radius in meters
                 
                 for index in 0..<items!.count {
-                    events.append(items![index].name)
+                    events.append(Data(name: items![index].name, latitude: self.location.latitude, longitdue: self.location.longitude))
                 }
-                if (events.count == 0) {
-                    events.append("None Available")
-                }
+                //                if (events.count == 0) {
+                //                    events.append("None Available")
+                //                }
                 self.itinerary.reloadData()
             }
             
@@ -263,7 +306,7 @@ class ItineraryViewController: UIViewController, UITableViewDelegate, UITableVie
                     println("Error with data")
                 }
             })
-
+            
         }
         self.itinerary.reloadData()
     }

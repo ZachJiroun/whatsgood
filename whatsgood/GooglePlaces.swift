@@ -113,11 +113,12 @@ class GooglePlaces {
         var json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
         
         var results = json["results"] as? Array<NSDictionary>
-        // println("results = \(results!.count)")
 
         for result in results! {
 
             var name = result["name"] as String
+            
+            var rating = result["rating"] as Double?
             
             var coordinate : CLLocationCoordinate2D!
             
@@ -130,7 +131,15 @@ class GooglePlaces {
                     var placemark = MKPlacemark(coordinate: coordinate, addressDictionary: nil)
                     var mapItem = MKMapItem(placemark: placemark)
                     mapItem.name = name
+                    // Prevents crashing
+                    if (rating != nil) {
+                        mapItem.phoneNumber = "\(rating)"
+                    } else {
+                        mapItem.phoneNumber = "No " // No rating available (0 stars)
+                    }
+                    
                     mapItems.append(mapItem)
+                    
                 }
             }
         }
