@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		92286D601A6A768F0010047A /* ItineraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92286D5F1A6A768F0010047A /* ItineraryViewController.swift */; };
+		9251708A1A6ACD4500DEB07A /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 925170871A6ACD4500DEB07A /* Icon-60@2x.png */; };
+		9251708B1A6ACD4500DEB07A /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 925170881A6ACD4500DEB07A /* Icon-60@3x.png */; };
+		9251708C1A6ACD4500DEB07A /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 925170891A6ACD4500DEB07A /* Icon-76@2x.png */; };
 		92AB4A341A6A8BF5008CF41D /* google.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92AB4A331A6A8BF5008CF41D /* google.plist */; };
 		92AB4A361A6A8C22008CF41D /* GooglePlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB4A351A6A8C22008CF41D /* GooglePlaces.swift */; };
 		92AB4A381A6A8D86008CF41D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AB4A371A6A8D86008CF41D /* CoreLocation.framework */; };
@@ -37,11 +40,14 @@
 		5C9D31D820C2FFDF6CEB1230 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		92286D5F1A6A768F0010047A /* ItineraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItineraryViewController.swift; sourceTree = "<group>"; };
 		925170861A6ABCCB00DEB07A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		925170871A6ACD4500DEB07A /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		925170881A6ACD4500DEB07A /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
+		925170891A6ACD4500DEB07A /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
 		92AB4A331A6A8BF5008CF41D /* google.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = google.plist; path = ../google.plist; sourceTree = "<group>"; };
 		92AB4A351A6A8C22008CF41D /* GooglePlaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlaces.swift; sourceTree = "<group>"; };
 		92AB4A371A6A8D86008CF41D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		92AB4A391A6A8D91008CF41D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		92B3DE8C1A6A30CA002EB86C /* whatsgood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = whatsgood.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92B3DE8C1A6A30CA002EB86C /* What's Good?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "What's Good?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B3DE901A6A30CA002EB86C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92B3DE911A6A30CA002EB86C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92B3DE931A6A30CA002EB86C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +55,7 @@
 		92B3DE981A6A30CA002EB86C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92B3DE9A1A6A30CA002EB86C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		92B3DE9D1A6A30CA002EB86C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		92B3DEA31A6A30CA002EB86C /* whatsgoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = whatsgoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		92B3DEA31A6A30CA002EB86C /* What's Good?Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "What's Good?Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B3DEA81A6A30CA002EB86C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92B3DEA91A6A30CA002EB86C /* whatsgoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = whatsgoodTests.swift; sourceTree = "<group>"; };
 		92B3DEB51A6A3267002EB86C /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
@@ -114,8 +120,8 @@
 		92B3DE8D1A6A30CA002EB86C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				92B3DE8C1A6A30CA002EB86C /* whatsgood.app */,
-				92B3DEA31A6A30CA002EB86C /* whatsgoodTests.xctest */,
+				92B3DE8C1A6A30CA002EB86C /* What's Good?.app */,
+				92B3DEA31A6A30CA002EB86C /* What's Good?Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,6 +129,9 @@
 		92B3DE8E1A6A30CA002EB86C /* whatsgood */ = {
 			isa = PBXGroup;
 			children = (
+				925170871A6ACD4500DEB07A /* Icon-60@2x.png */,
+				925170881A6ACD4500DEB07A /* Icon-60@3x.png */,
+				925170891A6ACD4500DEB07A /* Icon-76@2x.png */,
 				92AB4A351A6A8C22008CF41D /* GooglePlaces.swift */,
 				92B3DE911A6A30CA002EB86C /* AppDelegate.swift */,
 				92B3DE931A6A30CA002EB86C /* FirstViewController.swift */,
@@ -174,9 +183,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		92B3DE8B1A6A30CA002EB86C /* whatsgood */ = {
+		92B3DE8B1A6A30CA002EB86C /* What's Good? */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 92B3DEAD1A6A30CA002EB86C /* Build configuration list for PBXNativeTarget "whatsgood" */;
+			buildConfigurationList = 92B3DEAD1A6A30CA002EB86C /* Build configuration list for PBXNativeTarget "What's Good?" */;
 			buildPhases = (
 				BBDC5A014B4A0F117F86E1C8 /* Check Pods Manifest.lock */,
 				92B3DE881A6A30CA002EB86C /* Sources */,
@@ -188,14 +197,14 @@
 			);
 			dependencies = (
 			);
-			name = whatsgood;
+			name = "What's Good?";
 			productName = whatsgood;
-			productReference = 92B3DE8C1A6A30CA002EB86C /* whatsgood.app */;
+			productReference = 92B3DE8C1A6A30CA002EB86C /* What's Good?.app */;
 			productType = "com.apple.product-type.application";
 		};
-		92B3DEA21A6A30CA002EB86C /* whatsgoodTests */ = {
+		92B3DEA21A6A30CA002EB86C /* What's Good?Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 92B3DEB01A6A30CA002EB86C /* Build configuration list for PBXNativeTarget "whatsgoodTests" */;
+			buildConfigurationList = 92B3DEB01A6A30CA002EB86C /* Build configuration list for PBXNativeTarget "What's Good?Tests" */;
 			buildPhases = (
 				92B3DE9F1A6A30CA002EB86C /* Sources */,
 				92B3DEA01A6A30CA002EB86C /* Frameworks */,
@@ -206,9 +215,9 @@
 			dependencies = (
 				92B3DEA51A6A30CA002EB86C /* PBXTargetDependency */,
 			);
-			name = whatsgoodTests;
+			name = "What's Good?Tests";
 			productName = whatsgoodTests;
-			productReference = 92B3DEA31A6A30CA002EB86C /* whatsgoodTests.xctest */;
+			productReference = 92B3DEA31A6A30CA002EB86C /* What's Good?Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -230,7 +239,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 92B3DE871A6A30CA002EB86C /* Build configuration list for PBXProject "whatsgood" */;
+			buildConfigurationList = 92B3DE871A6A30CA002EB86C /* Build configuration list for PBXProject "What's Good?" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -243,8 +252,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				92B3DE8B1A6A30CA002EB86C /* whatsgood */,
-				92B3DEA21A6A30CA002EB86C /* whatsgoodTests */,
+				92B3DE8B1A6A30CA002EB86C /* What's Good? */,
+				92B3DEA21A6A30CA002EB86C /* What's Good?Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -254,8 +263,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9251708B1A6ACD4500DEB07A /* Icon-60@3x.png in Resources */,
 				92B3DE991A6A30CA002EB86C /* Main.storyboard in Resources */,
+				9251708A1A6ACD4500DEB07A /* Icon-60@2x.png in Resources */,
 				92B3DE9E1A6A30CA002EB86C /* LaunchScreen.xib in Resources */,
+				9251708C1A6ACD4500DEB07A /* Icon-76@2x.png in Resources */,
 				92B3DE9B1A6A30CA002EB86C /* Images.xcassets in Resources */,
 				92AB4A341A6A8BF5008CF41D /* google.plist in Resources */,
 			);
@@ -330,7 +342,7 @@
 /* Begin PBXTargetDependency section */
 		92B3DEA51A6A30CA002EB86C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 92B3DE8B1A6A30CA002EB86C /* whatsgood */;
+			target = 92B3DE8B1A6A30CA002EB86C /* What's Good? */;
 			targetProxy = 92B3DEA41A6A30CA002EB86C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -389,12 +401,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos8.1;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -426,10 +438,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SDKROOT = iphoneos8.1;
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -444,7 +456,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = whatsgood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "What's Good?";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "whatsgood/whatsgood-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -461,7 +473,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = whatsgood/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "What's Good?";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "whatsgood/whatsgood-Bridging-Header.h";
 			};
@@ -481,7 +493,7 @@
 				);
 				INFOPLIST_FILE = whatsgoodTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "What's Good?Tests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/whatsgood.app/whatsgood";
 			};
 			name = Debug;
@@ -496,7 +508,7 @@
 				);
 				INFOPLIST_FILE = whatsgoodTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "What's Good?Tests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/whatsgood.app/whatsgood";
 			};
 			name = Release;
@@ -504,7 +516,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		92B3DE871A6A30CA002EB86C /* Build configuration list for PBXProject "whatsgood" */ = {
+		92B3DE871A6A30CA002EB86C /* Build configuration list for PBXProject "What's Good?" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				92B3DEAB1A6A30CA002EB86C /* Debug */,
@@ -513,7 +525,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		92B3DEAD1A6A30CA002EB86C /* Build configuration list for PBXNativeTarget "whatsgood" */ = {
+		92B3DEAD1A6A30CA002EB86C /* Build configuration list for PBXNativeTarget "What's Good?" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				92B3DEAE1A6A30CA002EB86C /* Debug */,
@@ -522,7 +534,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		92B3DEB01A6A30CA002EB86C /* Build configuration list for PBXNativeTarget "whatsgoodTests" */ = {
+		92B3DEB01A6A30CA002EB86C /* Build configuration list for PBXNativeTarget "What's Good?Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				92B3DEB11A6A30CA002EB86C /* Debug */,

@@ -33,18 +33,70 @@ class ItineraryViewController: UIViewController, UITableViewDelegate, UITableVie
         self.refreshControl = UIRefreshControl()
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl.backgroundColor = UIColor(red: 50.0/250.0, green: 232.0/250.0, blue: 183.0/250.0, alpha: 1)
         itinerary?.addSubview(refreshControl)
+        refreshControl.center = CGPoint()
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
+        self.itinerary.reloadData()
+
         
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         
+        var header: UITableViewHeaderFooterView = view as UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
+        
+        switch (section) {
+        case 0:
+            header.contentView.backgroundColor = UIColor(red: 253.0/255.0, green: 112/255.0, blue: 74/255.0, alpha: 1)
+        case 1:
+            header.contentView.backgroundColor = UIColor(red: 175.0/255.0, green: 212.0/255.0, blue: 133.0/255.0, alpha: 1)
+        case 2:
+            header.contentView.backgroundColor = UIColor(red: 40.0/255.0, green: 229.0/255.0, blue: 253.0/255.0, alpha: 1)
+        default:
+            header.contentView.backgroundColor = UIColor(red: 40.0/255.0, green: 229.0/255.0, blue: 253.0/255.0, alpha: 1)
+        }
+        
+        header.textLabel.textColor = UIColor.whiteColor() //make the text white
+        header.textLabel.font = UIFont(name: "STHeitiTC-Light", size: 18.0)
+        header.textLabel.textAlignment = NSTextAlignment.Center
         
     }
 
+    // Colors for section headers
+    func tableView(tableView: UITableView!, viewForHeaderInSection section: Int) -> UIView! {
+        
+        var header :UITableViewHeaderFooterView = UITableViewHeaderFooterView()
+        
+        switch(section) {
+        case 0:
+            header.textLabel.textAlignment = NSTextAlignment.Center
+            header.textLabel.font = UIFont (name: "HelveticaNeue-UltraLight", size: 30)
+            header.textLabel.textColor = UIColor.whiteColor()
+            
+        case 1:
+            header.textLabel.font = UIFont(name: "STHeitiTC-Light", size: 15.0)
+            header.textLabel.textColor = UIColor.whiteColor()
+            
+        case 2:
+            header.textLabel.font = UIFont(name: "STHeitiTC-Light", size: 15.0)
+            header.textLabel.textColor = UIColor.whiteColor()
+            
+        default:
+            break
+        }
+        
+        return header
+    }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch (section) {
@@ -61,8 +113,10 @@ class ItineraryViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func refresh(sender: AnyObject) { // Pro version will check in background then push. Free is manual..
         
+        self.itinerary.reloadData()
         println("Refresh worked!")
         self.refreshControl.endRefreshing() // End refreshing
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -75,7 +129,7 @@ class ItineraryViewController: UIViewController, UITableViewDelegate, UITableVie
             } else {
                 if (indexPath.row < attractions.count) {
                     cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
-                    cell.textLabel.text = attractions[indexPath.row]
+                    cell.textLabel?.text = attractions[indexPath.row]
                 }
             }
         } else if (indexPath.section == 1) { // Food
@@ -84,7 +138,7 @@ class ItineraryViewController: UIViewController, UITableViewDelegate, UITableVie
             } else {
                 if (indexPath.row < food.count) {
                     cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
-                    cell.textLabel.text = food[indexPath.row]
+                    cell.textLabel?.text = food[indexPath.row]
                 }
             }
         } else if (indexPath.section == 2) { // Events
@@ -93,7 +147,7 @@ class ItineraryViewController: UIViewController, UITableViewDelegate, UITableVie
             } else {
                 if (indexPath.row < events.count) {
                     cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
-                    cell.textLabel.text = events[indexPath.row]
+                    cell.textLabel?.text = events[indexPath.row]
                 }
             }
         }
@@ -119,6 +173,12 @@ class ItineraryViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        
+        // Clear arrays
+        attractions.removeAll(keepCapacity: false)
+        food.removeAll(keepCapacity: false)
+        events.removeAll(keepCapacity: false)
+        
         var userLocation: CLLocation = locations[0] as CLLocation
         location = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
         
@@ -137,12 +197,9 @@ class ItineraryViewController: UIViewController, UITableViewDelegate, UITableVie
         
         // Google Places
         
-        
-        
-        
         var gp = GooglePlaces()
         
-        gp.search(location, radius: 20000, query: "museum") { (items, errorDescription) -> Void in // Radius in meters
+        gp.search(location, radius: 2000, query: "museum") { (items, errorDescription) -> Void in // Radius in meters
             
             println("Result count: \(items!.count)")
             
@@ -152,11 +209,11 @@ class ItineraryViewController: UIViewController, UITableViewDelegate, UITableVie
                 // println(attractions)
             }
             
-            self.itinerary.reloadData()
+            
             
         }
         
-        gp.search(location, radius: 20000, query: "food") { (items, errorDescription) -> Void in // Radius in meters
+        gp.search(location, radius: 2000, query: "food") { (items, errorDescription) -> Void in // Radius in meters
             
             println("Result count: \(items!.count)")
             
@@ -166,10 +223,9 @@ class ItineraryViewController: UIViewController, UITableViewDelegate, UITableVie
                 // println(food)
             }
             
-            self.itinerary.reloadData()
         }
         
-        gp.search(location, radius: 20000, query: "night_club") { (items, errorDescription) -> Void in // Radius in meters
+        gp.search(location, radius: 2000, query: "night_club") { (items, errorDescription) -> Void in // Radius in meters
             
             println("Result count: \(items!.count)")
             
@@ -178,8 +234,7 @@ class ItineraryViewController: UIViewController, UITableViewDelegate, UITableVie
                 events.append(items![index].name)
                 // println(events)
             }
-            
-            self.itinerary.reloadData()
+        
         }
 
     }

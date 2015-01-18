@@ -57,5 +57,9 @@
 	<string>Current location is needed to determine what is around you</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>The app always needs to know your current location</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>STHeitiTC-Light.ttf</string>
+	</array>
 </dict>
 </plist>
