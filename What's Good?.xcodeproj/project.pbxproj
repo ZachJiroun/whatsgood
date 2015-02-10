@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92072E871A6B83E2003A8981 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92072E861A6B83E2003A8981 /* Data.swift */; };
 		92286D601A6A768F0010047A /* ItineraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92286D5F1A6A768F0010047A /* ItineraryViewController.swift */; };
 		9251708A1A6ACD4500DEB07A /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 925170871A6ACD4500DEB07A /* Icon-60@2x.png */; };
 		9251708B1A6ACD4500DEB07A /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 925170881A6ACD4500DEB07A /* Icon-60@3x.png */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		5C9D31D820C2FFDF6CEB1230 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		92072E861A6B83E2003A8981 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		92286D5F1A6A768F0010047A /* ItineraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItineraryViewController.swift; sourceTree = "<group>"; };
 		925170861A6ABCCB00DEB07A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		925170871A6ACD4500DEB07A /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				92B3DE931A6A30CA002EB86C /* FirstViewController.swift */,
 				92286D5F1A6A768F0010047A /* ItineraryViewController.swift */,
 				92B3DE951A6A30CA002EB86C /* SecondViewController.swift */,
+				92072E861A6B83E2003A8981 /* Data.swift */,
 				92B3DE971A6A30CA002EB86C /* Main.storyboard */,
 				92B3DE9A1A6A30CA002EB86C /* Images.xcassets */,
 				92B3DE9C1A6A30CA002EB86C /* LaunchScreen.xib */,
@@ -320,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92072E871A6B83E2003A8981 /* Data.swift in Sources */,
 				92B3DEB61A6A3267002EB86C /* YelpClient.swift in Sources */,
 				92286D601A6A768F0010047A /* ItineraryViewController.swift in Sources */,
 				92B3DE961A6A30CA002EB86C /* SecondViewController.swift in Sources */,
